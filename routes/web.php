@@ -11,7 +11,7 @@
 |
 */
 
-Route::get ( '/' , 'PagesController@root' )->name ( 'root' );
+Route::get ( '/' , 'TopicsController@index' )->name ( 'root' );
 
 //Auth::routes();
 // Authentication Routes...
@@ -46,4 +46,5 @@ Route::resource ( 'replies' , 'RepliesController' , [ 'only' => [ 'store' , 'des
 Route::resource ( 'notifications' , 'NotificationsController' , [ 'only' => [ 'index' ] ] );
 
 Route::get ( 'permission-denied' , 'PagesController@permissionDenied' )->name ( 'permission-denied' );
+
 
