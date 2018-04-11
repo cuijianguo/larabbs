@@ -1,13 +1,12 @@
 // Variables
 @import "variables";
-
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* universal */
 
 body {
-  font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
+  font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial, sans-serif;
 }
 
 /* header */
@@ -36,8 +35,9 @@ body {
 /* Sticky footer styles */
 html {
   position: relative;
-  min-height: 100% ;
+  min-height: 100%;
 }
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
@@ -46,7 +46,7 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
-  width: 100% ;
+  width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #000;
@@ -86,7 +86,7 @@ body {
   .nav-tabs {
     margin-bottom: 20px;
 
-    >li.active > a {
+    > li.active > a {
       background-color: #fff;
     }
   }
@@ -117,7 +117,7 @@ body {
 }
 
 /* Topic Index Page */
-.topics-index-page .categories-show-page{
+.topics-index-page .categories-show-page {
   .topic-list {
     .nav > li > a {
       position: relative;
@@ -129,7 +129,7 @@ body {
       color: #444444;
     }
     .meta {
-      font-size:0.9em;
+      font-size: 0.9em;
       color: #b3b3b3;
       a {
         color: #b3b3b3;
@@ -191,5 +191,26 @@ body {
 
   .badge-hint {
     background-color: #d15b47 !important;;
+  }
+}
+
+/* Sidebar */
+
+.sidebar {
+  .panel-body {
+    padding: 12px;
+  }
+
+  hr {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .active-users {
+    a.media {
+      color: #797878;
+      line-height: 26px;
+      font-size: 0.9em;
+    }
   }
 }
