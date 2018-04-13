@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'standardsTree' => env('API_STANDARDS_TREE', 'x'),
+    'standardsTree' => env ( 'API_STANDARDS_TREE' , 'x' ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ return [
     |
     */
 
-    'subtype' => env('API_SUBTYPE', ''),
+    'subtype' => env ( 'API_SUBTYPE' , '' ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -46,7 +46,7 @@ return [
     |
     */
 
-    'version' => env('API_VERSION', 'v1'),
+    'version' => env ( 'API_VERSION' , 'v1' ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -58,7 +58,7 @@ return [
     |
     */
 
-    'prefix' => env('API_PREFIX', null),
+    'prefix' => env ( 'API_PREFIX' , null ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'domain' => env('API_DOMAIN', null),
+    'domain' => env ( 'API_DOMAIN' , null ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'name' => env('API_NAME', null),
+    'name' => env ( 'API_NAME' , null ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
     |
     */
 
-    'conditionalRequest' => env('API_CONDITIONAL_REQUEST', true),
+    'conditionalRequest' => env ( 'API_CONDITIONAL_REQUEST' , true ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -110,7 +110,7 @@ return [
     |
     */
 
-    'strict' => env('API_STRICT', false),
+    'strict' => env ( 'API_STRICT' , false ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +123,7 @@ return [
     |
     */
 
-    'debug' => env('API_DEBUG', false),
+    'debug' => env ( 'API_DEBUG' , false ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -138,12 +138,12 @@ return [
     */
 
     'errorFormat' => [
-        'message' => ':message',
-        'errors' => ':errors',
-        'code' => ':code',
-        'status_code' => ':status_code',
-        'debug' => ':debug',
-    ],
+        'message'     => ':message' ,
+        'errors'      => ':errors' ,
+        'code'        => ':code' ,
+        'status_code' => ':status_code' ,
+        'debug'       => ':debug' ,
+    ] ,
 
     /*
     |--------------------------------------------------------------------------
@@ -156,7 +156,7 @@ return [
 
     'middleware' => [
 
-    ],
+    ] ,
 
     /*
     |--------------------------------------------------------------------------
@@ -170,7 +170,7 @@ return [
 
     'auth' => [
 
-    ],
+    ] ,
 
     /*
     |--------------------------------------------------------------------------
@@ -185,7 +185,7 @@ return [
 
     'throttling' => [
 
-    ],
+    ] ,
 
     /*
     |--------------------------------------------------------------------------
@@ -199,7 +199,7 @@ return [
     |
     */
 
-    'transformer' => env('API_TRANSFORMER', Dingo\Api\Transformer\Adapter\Fractal::class),
+    'transformer' => env ( 'API_TRANSFORMER' , Dingo\Api\Transformer\Adapter\Fractal::class ) ,
 
     /*
     |--------------------------------------------------------------------------
@@ -212,22 +212,37 @@ return [
     |
     */
 
-    'defaultFormat' => env('API_DEFAULT_FORMAT', 'json'),
+    'defaultFormat' => env ( 'API_DEFAULT_FORMAT' , 'json' ) ,
 
     'formats' => [
 
-        'json' => Dingo\Api\Http\Response\Format\Json::class,
+        'json' => Dingo\Api\Http\Response\Format\Json::class ,
 
-    ],
+    ] ,
 
     'formatsOptions' => [
 
         'json' => [
-            'pretty_print' => env('API_JSON_FORMAT_PRETTY_PRINT_ENABLED', false),
-            'indent_style' => env('API_JSON_FORMAT_INDENT_STYLE', 'space'),
-            'indent_size' => env('API_JSON_FORMAT_INDENT_SIZE', 2),
-        ],
+            'pretty_print' => env ( 'API_JSON_FORMAT_PRETTY_PRINT_ENABLED' , false ) ,
+            'indent_style' => env ( 'API_JSON_FORMAT_INDENT_STYLE' , 'space' ) ,
+            'indent_size'  => env ( 'API_JSON_FORMAT_INDENT_SIZE' , 2 ) ,
+        ] ,
 
-    ],
+    ] ,
 
+    /*
+     * 接口频率限制
+     */
+    'rate_limits'    => [
+        // 访问频率限制，次数/分钟
+        'access' => [
+            'expires' => env ( 'RATE_LIMITS_EXPIRES' , 1 ) ,
+            'limit'   => env ( 'RATE_LIMITS' , 60 ) ,
+        ] ,
+        // 登录相关，次数/分钟
+        'sign'   => [
+            'expires' => env ( 'SIGN_RATE_LIMITS_EXPIRES' , 1 ) ,
+            'limit'   => env ( 'SIGN_RATE_LIMITS' , 10 ) ,
+        ] ,
+    ] ,
 ];
