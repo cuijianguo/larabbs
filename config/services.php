@@ -15,29 +15,35 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
-    ],
+        'domain' => env ( 'MAILGUN_DOMAIN' ) ,
+        'secret' => env ( 'MAILGUN_SECRET' ) ,
+    ] ,
 
     'ses' => [
-        'key' => env('SES_KEY'),
-        'secret' => env('SES_SECRET'),
-        'region' => 'us-east-1',
-    ],
+        'key'    => env ( 'SES_KEY' ) ,
+        'secret' => env ( 'SES_SECRET' ) ,
+        'region' => 'us-east-1' ,
+    ] ,
 
     'sparkpost' => [
-        'secret' => env('SPARKPOST_SECRET'),
-    ],
+        'secret' => env ( 'SPARKPOST_SECRET' ) ,
+    ] ,
 
     'stripe' => [
-        'model' => App\Models\User::class,
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
-    ],
+        'model'  => App\Models\User::class ,
+        'key'    => env ( 'STRIPE_KEY' ) ,
+        'secret' => env ( 'STRIPE_SECRET' ) ,
+    ] ,
 
     'baidu_translate' => [
-        'appid' => env('BAIDU_TRANSLATE_APPID'),
-        'key'   => env('BAIDU_TRANSLATE_KEY'),
-    ],
+        'appid' => env ( 'BAIDU_TRANSLATE_APPID' ) ,
+        'key'   => env ( 'BAIDU_TRANSLATE_KEY' ) ,
+    ] ,
+
+    'weixin' => [
+        'client_id'     => env ( 'WEIXIN_KEY' ) ,
+        'client_secret' => env ( 'WEIXIN_SECRET' ) ,
+        'redirect'      => env ( 'WEIXIN_REDIRECT_URI' ) ,
+    ] ,
 
 ];
