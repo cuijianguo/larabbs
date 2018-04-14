@@ -9,8 +9,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use Spatie\Permission\Traits\HasRoles;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable {
         notify as protected laravelNotify;
@@ -120,5 +121,17 @@ class User extends Authenticatable
 
         // 以数据库为中心的存储，既已同步，即可删除
         Redis::del ( $hash );
+    }
+
+    // Rest omitted for brevity
+
+    public function getJWTIdentifier ()
+    {
+        return $this->getKey ();
+    }
+
+    public function getJWTCustomClaims ()
+    {
+        return [];
     }
 }
