@@ -39,7 +39,7 @@ class TopicsController extends Controller
     {
         return $this->response->item ( $topic , new TopicTransformer() );
     }
-    
+
     public function store ( TopicRequest $request , Topic $topic )
     {
         $topic->fill ( $request->all () );
