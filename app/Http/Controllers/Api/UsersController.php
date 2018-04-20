@@ -41,24 +41,29 @@ class UsersController extends Controller
             ->setStatusCode ( 201 );
     }
 
-    public function update(UserRequest $request)
+    public function update ( UserRequest $request )
     {
-        $user = $this->user();
+        $user = $this->user ();
 
-        $attributes = $request->only(['name', 'email', 'introduction']);
+        $attributes = $request->only ( [ 'name' , 'email' , 'introduction' ] );
 
-        if ($request->avatar_image_id) {
-            $image = Image::find($request->avatar_image_id);
+        if ( $request->avatar_image_id ) {
+            $image = Image::find ( $request->avatar_image_id );
 
-            $attributes['avatar'] = $image->path;
+            $attributes[ 'avatar' ] = $image->path;
         }
-        $user->update($attributes);
+        $user->update ( $attributes );
 
-        return $this->response->item($user, new UserTransformer());
+        return $this->response->item ( $user , new UserTransformer() );
     }
 
     public function me ()
     {
         return $this->response->item ( $this->user () , new UserTransformer() );
+    }
+
+    public function activedIndex ( User $user )
+    {
+        return $this->response->collection ( $user->getActiveUsers () , new UserTransformer() );
     }
 }
